@@ -1,0 +1,39 @@
+*/.mvn/*
+*.DS_Store
+*.idea/
+out/*
+*/target/
+*.iml
+*/mvnw
+*/mvnw.cmd
+*.iws
+*.ipr
+*/log/
+
+## Eclipse
+.project
+.metadata
+.classpath
+.settings/
+.loadpath
+**/CreatCode.java
+
+## Maven
+target/
+**/target/
+
+## Idea
+.idea/
+*.iml
+#*.yml
+
+## Mac crap
+.DS_Store
+
+/logs/
+**/logs/
+
+**/log/*
+
+*.log
+*.out
