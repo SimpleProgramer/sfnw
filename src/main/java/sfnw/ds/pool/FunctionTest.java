@@ -42,11 +42,8 @@ public class FunctionTest {
         System.out.println("-----------------------------------------------------");
         //在stream中使用BiConsumer
         System.out.println("在stream中使用BiConsumer");
-
         //supplier：一个能创造目标类型实例的方法。
-
         //accumulator：一个将当元素添加到目标中的方法。
-
         //combiner：一个将中间状态的多个结果整合到一起的方法（parallelStream的时候会用到）
         cow.parallelStream().collect(() -> {
             List<String> s = new ArrayList<>();
