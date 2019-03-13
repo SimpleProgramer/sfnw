@@ -32,4 +32,8 @@ public class LambdaTest {
         String name = "final string name";
         Runnable finalVar = () -> System.out.println("hello lambda" + name);
     }
+
+    public LambdaTest(){
+        System.out.println("这个对象初始化了");
+    }
 }

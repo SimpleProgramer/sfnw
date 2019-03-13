@@ -2,10 +2,7 @@ package sfnw.ds.pool;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.*;
 import java.util.stream.Stream;
 
 //函数接口
@@ -16,6 +13,7 @@ public class FunctionTest {
     static {
         cow.add("222");
         cow.add("111");
+        cow.add("000");
         mapT.put("1key", "1value");
         mapT.put("2key", "2value");
         mapT.put("3key", "3value");
@@ -59,7 +57,15 @@ public class FunctionTest {
             System.out.println(one + "====" + two);
         });
         System.out.println("-----------------------------------------------------");
-
+        System.out.println("在reduce中使用BinaryOperator<T>");
+        //这里 两个参数分别代表集合当前元素和nextOne
+        System.out.println(cow.stream().reduce((c,a) -> a+c).get());
+        System.out.println("-----------------------------------------------------");
+        System.out.println("使用Supplier创建一个对象");
+        Supplier<LambdaTest> beanFactory = () -> new LambdaTest();//LambdaTest::new;
+        beanFactory.get();
+        beanFactory.get();//调用两次证明该函数是在调用get时才真正去初始化对象。
+        System.out.println("-----------------------------------------------------");
         Consumer<String> consumer = (a) -> {
             System.out.println(a + " [Consumer]");
         };
